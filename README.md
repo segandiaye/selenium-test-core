@@ -1,1 +1,48 @@
 # selenium-test-core
+
+[![NPM version](http://img.shields.io/npm/v/selenium-test-core.svg)](https://www.npmjs.org/package/selenium-test-core)
+[![Build Status](https://travis-ci.org/segandiaye/selenium-test-core.svg?branch=master)](https://travis-ci.org/segandiaye/selenium-test-core)
+
+Make it easier to use selenium to test your application.
+
+## Installation
+
+```sh
+# Using npm
+npm install --save selenium-test-core
+```
+
+### Supported browsers
+
+* `firefox`
+* `firefox:headless`
+* `chrome`
+* `chrome:headless`
+* `ie`
+
+### Example
+
+```js
+const {chooseUrlAndBrowser, takeScreenshot} = require('selenium-test-core');
+
+(async() => {
+    try {
+        await chooseUrlAndBrowser(runTests);
+    } catch (err) {
+        process.exitCode = 1;
+        logger.error(err);
+    }
+})();
+
+async function runTests(helpers) {
+  await helpers.start();
+  await takeScreenshot('welcome_page', helpers);
+}
+```
+
+```sh
+# Using npm
+npm start NAVIGATOR URL
+# In headless
+npm start NAVIGATOR:headless URL
+```

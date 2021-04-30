@@ -1,0 +1,46 @@
+{
+  "name": "selenium-test-core",
+  "version": "1.0.0",
+  "description": "Make easy and simple a application selenium tests",
+  "main": "lib/main.js",
+  "keywords": [
+    "selenium",
+    "seleniumtest",
+    "seleniumcore",
+    "seleniumtestcore"
+  ],
+  "scripts": {
+    "start": "node lib/main.js",
+    "test": "npm run lint",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "engines": {
+    "node": ">=12.18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/segandiaye/selenium-test-core.git"
+  },
+  "author": "NDIAYE Sega «segadembandiaye2007@gmail.com»",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/segandiaye/selenium-test-core/issues"
+  },
+  "homepage": "https://github.com/segandiaye/selenium-test-core#readme",
+  "dependencies": {
+    "chromedriver": "^2.38.3",
+    "edgedriver": "^4.17134.1",
+    "geckodriver": "^1.22.2",
+    "got": "^11.8.2",
+    "iedriver": "^3.150.1",
+    "selenium-webdriver": "^4.0.0-beta.3",
+    "toml": "^3.0.0",
+    "yargs-parser": "^20.2.7"
+  },
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-config-src": "^1.0.0",
+    "jest": "^26.6.3"
+  }
+}
