@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "start": "node lib/main.js",
-    "test": "npm run lint",
+    "test:ci": "npm run lint",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
