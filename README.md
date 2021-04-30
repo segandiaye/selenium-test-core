@@ -3,7 +3,7 @@
 [![NPM version](http://img.shields.io/npm/v/selenium-test-core.svg)](https://www.npmjs.org/package/selenium-test-core)
 [![Build Status](https://travis-ci.org/segandiaye/selenium-test-core.svg?branch=master)](https://travis-ci.org/segandiaye/selenium-test-core)
 
-Make it easier to use selenium to test your application.
+Test your application with selenium easily, without too much cofiguration and without having to install any drivers.
 
 ## Installation
 
