@@ -37,6 +37,8 @@ const {chooseUrlAndBrowser, takeScreenshot} = require('selenium-test-core');
 async function runTests(helpers) {
   await helpers.start();
   await takeScreenshot('welcome_page', helpers);
+
+  await helpers.close(2000);
 }
 ```
 
