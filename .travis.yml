@@ -9,8 +9,9 @@ node_js:
   - "lts/*"
 
 # Travis CI uses "npm ci" by default because there is a package-lock.json file
-#install:
-  - npm ci
+install:
+  - npm ci --cache .npm --prefer-offline --loglevel notice
 
 script:
   - npm run test:ci
+  - npm audit
