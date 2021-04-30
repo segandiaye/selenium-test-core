@@ -38,6 +38,7 @@ async function runTests(helpers) {
   await helpers.start();
   await takeScreenshot('welcome_page', helpers);
 
+  # 2000 is the time to wait for closing the browser
   await helpers.close(2000);
 }
 ```
