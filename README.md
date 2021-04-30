@@ -30,7 +30,7 @@ const {chooseUrlAndBrowser, takeScreenshot} = require('selenium-test-core');
         await chooseUrlAndBrowser(runTests);
     } catch (err) {
         process.exitCode = 1;
-        logger.error(err);
+        console.log(err);
     }
 })();
 
