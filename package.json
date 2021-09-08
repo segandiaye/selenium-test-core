@@ -1,6 +1,6 @@
 {
   "name": "selenium-test-core",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Make easy and simple a application selenium tests",
   "main": "lib/main.js",
   "keywords": [
