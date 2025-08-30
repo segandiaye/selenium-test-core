@@ -40,6 +40,15 @@ jobs:
     - name: Start Firefox in headless mode
       run: npm start firefox:headless http://www.example.com
 
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v5
+      with:
+        files: coverage.xml
+        token: ${{ secrets.CODECOV_TOKEN }}
+        slug: segandiaye/selenium-test-core
+        verbose: true
+        fail_ci_if_error: true # Ensure CI fails if coverage isn’t uploaded:
+
     #- name: Run npm audit
       #run: npm audit
 
