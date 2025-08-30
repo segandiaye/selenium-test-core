@@ -1,0 +1,45 @@
+name: Node.js CI
+
+on:
+  push:
+    branches:
+      - main
+      - feat/tmp
+  pull_request:
+    branches:
+      - main
+      - feat/tmp
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 'stable'
+
+    - name: Cache node modules
+      uses: actions/cache@v3
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-modules-
+
+    - name: Install dependencies
+      run: npm ci --cache .npm --prefer-offline --loglevel notice
+
+    - name: Run tests
+      run: npm run test:ci
+
+    - name: Start Firefox in headless mode
+      run: npm start firefox:headless http://www.example.com
+
+    #- name: Run npm audit
+      #run: npm audit
+

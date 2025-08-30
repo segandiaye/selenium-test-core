@@ -1,7 +1,7 @@
 # selenium-test-core
 
 [![NPM version](http://img.shields.io/npm/v/selenium-test-core.svg)](https://www.npmjs.org/package/selenium-test-core)
-[![Build Status](https://travis-ci.org/segandiaye/selenium-test-core.svg?branch=main)](https://travis-ci.org/segandiaye/selenium-test-core)
+[![codecov](https://codecov.io/gh/segandiaye/selenium-test-core/branch/feat/tmp/graph/badge.svg)](https://codecov.io/gh/segandiaye/selenium-test-core)
 
 Test your application with selenium easily, without too much cofiguration and without having to install any drivers.
 
