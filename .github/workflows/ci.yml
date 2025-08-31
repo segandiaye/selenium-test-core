@@ -50,7 +50,7 @@ jobs:
       run: npm start firefox:headless http://www.example.com
 
     - name: Check images
-      run: ls -la
+      run: tree
       
     
     # TODO : fix security
