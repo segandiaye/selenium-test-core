@@ -4,5 +4,7 @@ module.exports = {
     collectCoverageFrom: [
         'lib'
     ],
-    coverageDirectory: '/tmp/selenium-test-core',
+    collectCoverage: true,
+    coverageDirectory: 'coverage',
+    coverageReporters: ['lcov', 'text']
 };
