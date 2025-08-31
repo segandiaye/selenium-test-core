@@ -37,12 +37,6 @@ jobs:
     - name: Run tests
       run: npm run test:ci
 
-    - name: Run tests with coverage
-      run: npx jest -- --coverage test/
-      
-    - name: Check if OK
-      run: ls -la
-
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v5
       with:
@@ -54,6 +48,9 @@ jobs:
 
     - name: Start Firefox in headless mode
       run: npm start firefox:headless http://www.example.com
+
+    - name: Check images
+      run: ls -la
       
     
     # TODO : fix security
