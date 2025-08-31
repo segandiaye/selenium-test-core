@@ -1,0 +1,54 @@
+name: Node.js CI
+
+on:
+  push:
+    branches:
+      - main
+      - feat/build_badge
+  pull_request:
+    branches:
+      - main
+      - feat/build_badge
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '12.18.2'
+
+    - name: Cache node modules
+      uses: actions/cache@v3
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-modules-
+
+    - name: Install dependencies
+      run: npm ci --cache .npm --prefer-offline --loglevel notice
+
+    - name: Run tests
+      run: npm run test:ci
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v5
+      with:
+        file: ./coverage/lcov.info  #
+        token: ${{ secrets.CODECOV_TOKEN }}
+        slug: segandiaye/selenium-test-core
+        verbose: true
+        fail_ci_if_error: true # Ensure CI fails if coverage isn’t uploaded:
+
+    - name: Start Firefox in headless mode
+      run: npm start firefox:headless http://www.example.com      
+    
+    # TODO : fix security
+    #- name: Run npm audit
+      #run: npm audit
