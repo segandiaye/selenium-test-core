@@ -37,9 +37,6 @@ jobs:
     - name: Run tests
       run: npm run test:ci
 
-    - name: Start Firefox in headless mode
-      run: npm start firefox:headless http://www.example.com
-      
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v5
       with:
@@ -49,6 +46,11 @@ jobs:
         verbose: true
         fail_ci_if_error: true # Ensure CI fails if coverage isn’t uploaded:
 
+    - name: Start Firefox in headless mode
+      run: npm start firefox:headless http://www.example.com
+      
+    
+    # TODO : fix security
     #- name: Run npm audit
       #run: npm audit
 
