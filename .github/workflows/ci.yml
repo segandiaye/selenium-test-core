@@ -47,11 +47,7 @@ jobs:
         fail_ci_if_error: true # Ensure CI fails if coverage isn’t uploaded:
 
     - name: Start Firefox in headless mode
-      run: npm start firefox:headless http://www.example.com
-
-    - name: Check images
-      run: tree
-      
+      run: npm start firefox:headless http://www.example.com      
     
     # TODO : fix security
     #- name: Run npm audit
