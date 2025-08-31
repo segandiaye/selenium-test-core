@@ -38,7 +38,7 @@ jobs:
       run: npm run test:ci
 
     - name: Run tests with coverage
-      run: npx jest -- --coverage
+      run: npx jest -- --coverage test/
       
     - name: Check if OK
       run: ls -la
