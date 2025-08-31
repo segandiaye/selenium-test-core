@@ -37,6 +37,9 @@ jobs:
     - name: Run tests
       run: npm run test:ci
 
+    - name: Check if OK
+      run: ls -la
+
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v5
       with:
